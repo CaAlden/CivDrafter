@@ -9,9 +9,9 @@ public abstract class ACivilization implements ICivilization {
 
   private final String name;
   private final String ruler;
-  protected String info;
+  protected IInfo info;
 
-  public ACivilization(String name, String ruler, String info) {
+  public ACivilization(String name, String ruler, IInfo info) {
     Objects.requireNonNull(name, "A Civilization must have a name.");
     Objects.requireNonNull(ruler, "A Civilization must have a ruler");
     this.name = name;
@@ -30,7 +30,7 @@ public abstract class ACivilization implements ICivilization {
   }
 
   @Override
-  public String getInfo() {
+  public IInfo getInfo() {
     return info;
   }
 

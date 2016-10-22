@@ -24,5 +24,5 @@ public interface ICivilization {
    *
    * @return the description.
    */
-  String getInfo();
+  IInfo getInfo();
 }

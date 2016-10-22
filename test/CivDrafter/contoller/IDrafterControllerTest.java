@@ -9,6 +9,7 @@ import CivDrafter.model.ACivilization;
 import CivDrafter.model.Civilization;
 import CivDrafter.model.IDrafterModel;
 import CivDrafter.model.DrafterModel;
+import CivDrafter.model.StringInfo;
 
 import static org.junit.Assert.*;
 
@@ -42,7 +43,7 @@ public abstract class IDrafterControllerTest {
     IDrafterController controller = getInstance(ap, sr);
     ArrayList<ACivilization> test = new ArrayList<>();
     for (int i = 0; i < 3; i++) {
-      test.add(new Civilization("test", "test", "test"));
+      test.add(new Civilization("test", "test", new StringInfo("test")));
     }
 
     IDrafterModel modelMock = mockModel(test, 3, false);
@@ -56,7 +57,7 @@ public abstract class IDrafterControllerTest {
     IDrafterController controller = getInstance(ap, sr);
     ArrayList<ACivilization> test = new ArrayList<>();
     for (int i = 0; i < 3; i++) {
-      test.add(new Civilization("test", "test", "test"));
+      test.add(new Civilization("test", "test", new StringInfo("test")));
     }
 
     IDrafterModel modelMock = mockModel(test, 0, true);

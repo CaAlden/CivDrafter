@@ -9,6 +9,7 @@ import CivDrafter.model.ACivilization;
 import CivDrafter.model.Civilization;
 import CivDrafter.model.ICivilization;
 import CivDrafter.model.IDrafterModel;
+import CivDrafter.model.StringInfo;
 
 import static org.junit.Assert.*;
 
@@ -25,9 +26,9 @@ public abstract class ICivDrafterFactoryTest {
     ICivDrafterFactory factory = this.getInstance("resources/test.cfg");
     ArrayList<ACivilization> civs = factory.getCivilizations();
     assertEquals(3, factory.getCivilizations().size());
-    Civilization test1 = new Civilization("American", "Washington", "None");
-    Civilization test2 = new Civilization("Arabian", "Harun al-Rashid", "None");
-    Civilization test3 = new Civilization("Assyrian", "Ashurbanipal", "None");
+    Civilization test1 = new Civilization("American", "Washington", new StringInfo("None"));
+    Civilization test2 = new Civilization("Arabian", "Harun al-Rashid", new StringInfo("None"));
+    Civilization test3 = new Civilization("Assyrian", "Ashurbanipal", new StringInfo("None"));
     assertEquals(test1, civs.get(0));
     assertEquals(test2, civs.get(1));
     assertEquals(test3, civs.get(2));
@@ -48,7 +49,7 @@ public abstract class ICivDrafterFactoryTest {
   @Test
   public void makeCivilization() throws Exception {
     ICivDrafterFactory factory = getInstance("resources/test.cfg");
-    ICivilization civ = factory.makeCivilization("Civ", "king", "test");
+    ICivilization civ = factory.makeCivilization("Civ", "king", new StringInfo("test"));
     assertTrue(civ instanceof ICivilization);
     assertEquals("Civ", civ.getName());
     assertEquals("king", civ.getRuler());

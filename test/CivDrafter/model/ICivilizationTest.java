@@ -26,7 +26,7 @@ public abstract class ICivilizationTest {
   @Test
   public void getInfo() throws Exception {
     ICivilization test = getInstance("name", "ruler", "info");
-    assertEquals("info", test.getInfo());
+    assertEquals("info", test.getInfo().infoString());
   }
 
 }

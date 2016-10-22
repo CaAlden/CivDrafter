@@ -5,7 +5,7 @@ package CivDrafter.model;
  */
 public class Civilization extends ACivilization {
 
-  public Civilization(String name, String ruler, String info) {
+  public Civilization(String name, String ruler, IInfo info) {
     super(name, ruler, info);
   }
 }

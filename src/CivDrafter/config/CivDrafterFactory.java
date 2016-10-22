@@ -14,6 +14,8 @@ import CivDrafter.model.Civilization;
 import CivDrafter.model.DrafterModel;
 import CivDrafter.model.ACivilization;
 import CivDrafter.model.IDrafterModel;
+import CivDrafter.model.IInfo;
+import CivDrafter.model.StringInfo;
 
 
 /**
@@ -52,9 +54,9 @@ public class CivDrafterFactory implements ICivDrafterFactory {
     br.lines().forEach((String line) -> {
       String[] civInput = line.split(";");
       if (civInput.length != 3) {
-        throw new IllegalArgumentException("Input civilizaiton did not have three inputs.");
+        throw new IllegalArgumentException("Input civilization did not have three inputs.");
       } else {
-        this.civs.add(makeCivilization(civInput[0], civInput[1], civInput[2]));
+        this.civs.add(makeCivilization(civInput[0], civInput[1], new StringInfo(civInput[2])));
       }
     });
   }
@@ -75,7 +77,7 @@ public class CivDrafterFactory implements ICivDrafterFactory {
   }
 
   @Override
-  public ACivilization makeCivilization(String name, String ruler, String info) {
+  public ACivilization makeCivilization(String name, String ruler, IInfo info) {
     return new Civilization(name, ruler, info);
   }
 }

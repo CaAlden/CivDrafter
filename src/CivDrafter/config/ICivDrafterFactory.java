@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import CivDrafter.contoller.IDrafterController;
 import CivDrafter.model.ACivilization;
 import CivDrafter.model.IDrafterModel;
+import CivDrafter.model.IInfo;
 
 /**
  * Class for configuring CivDrafter from a file.
@@ -39,5 +40,5 @@ public interface ICivDrafterFactory {
    * @param info  the information about this Civilization.
    * @return the created ICivilization object.
    */
-  ACivilization makeCivilization(String name, String ruler, String info);
+  ACivilization makeCivilization(String name, String ruler, IInfo info);
 }
