@@ -24,10 +24,22 @@ import CivDrafter.model.StringInfo;
  */
 public class CivDrafterFactory implements ICivDrafterFactory {
 
+  /**
+   * Generate a CivDrafterFactory using the config file at a given file path.
+   * @param filename the name of the config file.
+   * @return the CivDrafterFactory.
+   * @throws IOException if there is an error reading the config file.
+   */
   public static ICivDrafterFactory makeCivDrafterFactory(String filename) throws IOException {
     return makeCivDrafterFactory(new File(filename));
   }
 
+  /**
+   * Make a factory out using the given config file to generate the Civilizations.
+   * @param file the config file.
+   * @return A factory for creating the drafter game.
+   * @throws IOException if there is an error reading the input file.
+   */
   public static ICivDrafterFactory makeCivDrafterFactory(File file) throws IOException {
     BufferedReader br = new BufferedReader(new FileReader(file));
 
@@ -45,8 +57,7 @@ public class CivDrafterFactory implements ICivDrafterFactory {
   private final ArrayList<ACivilization> civs;
 
   /**
-   * Construct a configuration from the given civs
-   *
+   * Construct a configuration from the given civs.
    * @param br the reader to read from.
    */
   private CivDrafterFactory(BufferedReader br) {

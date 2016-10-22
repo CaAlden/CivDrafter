@@ -14,7 +14,7 @@ import CivDrafter.model.StringInfo;
 import static org.junit.Assert.*;
 
 /**
- * Created by calden on 10/16/16.
+ * IDrafterController tests.
  */
 public abstract class IDrafterControllerTest {
 
